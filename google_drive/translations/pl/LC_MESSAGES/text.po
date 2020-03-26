@@ -2,37 +2,42 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Emilia Dolega <emilia.dolega@opi.org.pl>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 14:49+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-03-26 10:41+0000\n"
+"Last-Translator: Emilia Dolega <emilia.dolega@opi.org.pl>, 2020\n"
+"Language-Team: Polish (https://www.transifex.com/navoica/teams/104253/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: google_drive/google_calendar.py:41 google_drive/google_docs.py:55
 #: google_drive/templates/html/google_calendar_edit.html:17
 #: google_drive/templates/html/google_docs_edit.html:17
 msgid "Display Name"
-msgstr ""
+msgstr "Wyświetlana nazwa"
 
 #: google_drive/google_calendar.py:42 google_drive/google_docs.py:56
 #: google_drive/templates/html/google_calendar_edit.html:24
 #: google_drive/templates/html/google_docs_edit.html:24
 msgid "This name appears in the horizontal navigation at the top of the page."
 msgstr ""
+"Ta nazwa wyświetli się na poziomym pasku nawigacyjnym na górze strony. "
 
 #: google_drive/google_calendar.py:47
 #: google_drive/templates/html/google_calendar_edit.html:28
 msgid "Public Calendar ID"
-msgstr ""
+msgstr "Kod publicznego kalendarza"
 
 #: google_drive/google_calendar.py:49
 msgid ""
@@ -40,11 +45,14 @@ msgid ""
 "Calendar, open Settings and copy the ID from the Calendar Address section "
 "into this field."
 msgstr ""
+"Google udostępnia kod do umieszczania publicznych kalendarzy. W Kalendarzu "
+"Google należy otworzyć \"Ustawienia\", a następnie \"Integrowanie "
+"kalendarza\" i skopiować kod iframe do powyższego pola. "
 
 #: google_drive/google_calendar.py:56
 #: google_drive/templates/html/google_calendar_edit.html:41
 msgid "Default View"
-msgstr ""
+msgstr "Widok domyślny"
 
 #: google_drive/google_calendar.py:57
 #: google_drive/templates/html/google_calendar_edit.html:50
@@ -52,11 +60,13 @@ msgid ""
 "The calendar view that students see by default. A student can change this "
 "view."
 msgstr ""
+"Kalendarz jest domyślnie widoczny dla studentów. Uczeń może zmienić ten "
+"widok."
 
 #: google_drive/google_docs.py:61
 #: google_drive/templates/html/google_docs_edit.html:28
 msgid "Embed Code"
-msgstr ""
+msgstr "Kod Osadzania"
 
 #: google_drive/google_docs.py:63
 #: google_drive/templates/html/google_docs_edit.html:31
@@ -65,31 +75,38 @@ msgid ""
 "document, from the File menu, select Publish to the Web. Modify settings as "
 "needed, click Publish, and copy the embed code into this field."
 msgstr ""
+"Google udostępnia kod osadzania dokumentów z Dysku Google. Należy otworzyć "
+"wybrany plik z Dysku, w prawym górnym rogu nacisnąć na trzy kropki, wybrać "
+"\"Otwórz w nowym oknie\", a następnie (już w nowym oknie) ponownie nacisnąć "
+"trzy kropki i wybrać opcję \"Umieść element\". Następnie należy przekopiować"
+" stamtąd kod HTML do powyższego pola."
 
 #: google_drive/google_docs.py:71
 msgid "Alternative Text"
-msgstr ""
+msgstr "Tekst alternatywny"
 
 #: google_drive/google_docs.py:72
 #: google_drive/templates/html/google_docs_edit.html:38
 msgid ""
 "Alternative text describes an image and appears if the image is unavailable."
 msgstr ""
+"Tekst alternatywny opisuje obraz i pojawia się wtedy, gdy obraz jest "
+"niedostępny."
 
 #: google_drive/templates/html/google_calendar_edit.html:9
 msgid "Invalid Google Calendar"
-msgstr ""
+msgstr "Nieprawidłowy Kalendarz Google"
 
 #: google_drive/templates/html/google_calendar_edit.html:10
 #: google_drive/templates/html/google_docs_edit.html:10
 msgid "Please correct the outlined fields."
-msgstr ""
+msgstr "Popraw zaznaczone pola. "
 
 #: google_drive/templates/html/google_calendar_edit.html:21
 #: google_drive/templates/html/google_calendar_edit.html:32
 #: google_drive/templates/html/google_docs_edit.html:21
 msgid "Clear Value"
-msgstr ""
+msgstr "Wyczyść zawartość"
 
 #: google_drive/templates/html/google_calendar_edit.html:35
 msgid ""
@@ -97,25 +114,28 @@ msgid ""
 "Calendar, open Settings and copy the ID from the Calendar Address section "
 "into this field. You can "
 msgstr ""
+"Google udostępnia kod do umieszczania publicznych kalendarzy. W Kalendarzu "
+"Google należy otworzyć \"Ustawienia\", a następnie \"Integrowanie "
+"kalendarza\" i skopiować kod iframe do powyższego pola. Możesz"
 
 #: google_drive/templates/html/google_calendar_edit.html:36
 msgid "learn more here"
-msgstr ""
+msgstr "dowiedzieć się więcej tutaj."
 
 #: google_drive/templates/html/google_calendar_edit.html:60
 #: google_drive/templates/html/google_docs_edit.html:47
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: google_drive/templates/html/google_calendar_edit.html:64
 #: google_drive/templates/html/google_docs_edit.html:51
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: google_drive/templates/html/google_docs_edit.html:9
 msgid "Invalid Google Document"
-msgstr ""
+msgstr "Niepoprawidłowy Dokument Google"
 
 #: google_drive/templates/html/google_docs_edit.html:35
 msgid "Alternative text"
-msgstr ""
+msgstr "Tekst alternatywny"
