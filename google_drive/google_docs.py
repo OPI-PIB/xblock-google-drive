@@ -13,6 +13,7 @@ from xblock.fields import Scope, String
 from xblock.fragment import Fragment
 from xblockutils.publish_event import PublishEventMixin
 from xblockutils.resources import ResourceLoader
+from xblockutils.studio_editable import StudioEditableXBlockMixin
 import six
 
 LOG = logging.getLogger(__name__)
@@ -47,7 +48,7 @@ def _(text):
 
 # Classes ###########################################################
 @XBlock.needs("i18n")  # pylint: disable=too-many-ancestors
-class GoogleDocumentBlock(XBlock, PublishEventMixin):
+class GoogleDocumentBlock(XBlock, PublishEventMixin, StudioEditableXBlockMixin):
     """
     XBlock providing a google document embed link
     """
@@ -55,7 +56,7 @@ class GoogleDocumentBlock(XBlock, PublishEventMixin):
         display_name=_("Display Name"),
         help=_("This name appears in the horizontal navigation at the top of the page."),
         scope=Scope.settings,
-        default="Google Document"
+        default=_("Google Document")
     )
     embed_code = String(
         display_name=_("Embed Code"),
@@ -73,12 +74,15 @@ class GoogleDocumentBlock(XBlock, PublishEventMixin):
         scope=Scope.settings,
         default=""
     )
-
+    skip_flag = False
     # Context argument is specified for xblocks, but we are not using herein
     def student_view(self, context):  # pylint: disable=unused-argument
         """
         Player view, displayed to the student
         """
+
+        self.init_emulation()
+
         fragment = Fragment()
 
         fragment.add_content(RESOURCE_LOADER.render_django_template(
@@ -101,10 +105,14 @@ class GoogleDocumentBlock(XBlock, PublishEventMixin):
         fragment = Fragment()
         # Need to access protected members of fields to get their default value
         default_name = self.fields['display_name']._default  # pylint: disable=protected-access,unsubscriptable-object
-        fragment.add_content(RESOURCE_LOADER.render_template(DOCUMENT_EDIT_TEMPLATE, {
+        fragment.add_content(RESOURCE_LOADER.render_django_template(
+            DOCUMENT_EDIT_TEMPLATE,
+            context={
             'self': self,
             'defaultName': default_name,
-        }))
+            },
+            i18n_service=self.runtime.service(self, "i18n"),
+        ))
         fragment.add_javascript(RESOURCE_LOADER.load_unicode('public/js/google_docs_edit.js'))
         fragment.add_css(RESOURCE_LOADER.load_unicode('public/css/google_edit.css'))
 
@@ -168,3 +176,9 @@ class GoogleDocumentBlock(XBlock, PublishEventMixin):
         A canned scenario for display in the workbench.
         """
         return [("Google Docs scenario", "<vertical_demo><google-document/></vertical_demo>")]
+
+    def init_emulation(self):
+        if not self.skip_flag:
+            _ = self.runtime.service(self, "i18n").ugettext
+            self.fields['display_name']._default = _(self.fields['display_name']._default)
+            self.skip_flag = True

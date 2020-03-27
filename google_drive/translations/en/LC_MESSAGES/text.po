@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 14:49+0100\n"
+"POT-Creation-Date: 2020-03-27 00:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,48 +17,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: google_drive/google_calendar.py:41 google_drive/google_docs.py:55
+#: google_drive/google_calendar.py:43 google_drive/google_docs.py:56
 #: google_drive/templates/html/google_calendar_edit.html:17
 #: google_drive/templates/html/google_docs_edit.html:17
 msgid "Display Name"
 msgstr ""
 
-#: google_drive/google_calendar.py:42 google_drive/google_docs.py:56
+#: google_drive/google_calendar.py:44 google_drive/google_docs.py:57
 #: google_drive/templates/html/google_calendar_edit.html:24
 #: google_drive/templates/html/google_docs_edit.html:24
 msgid "This name appears in the horizontal navigation at the top of the page."
 msgstr ""
 
-#: google_drive/google_calendar.py:47
+#: google_drive/google_calendar.py:46
+msgid "Google Calendar"
+msgstr ""
+
+#: google_drive/google_calendar.py:49
 #: google_drive/templates/html/google_calendar_edit.html:28
 msgid "Public Calendar ID"
 msgstr ""
 
-#: google_drive/google_calendar.py:49
+#: google_drive/google_calendar.py:51
 msgid ""
 "Google provides an ID for publicly available calendars. In the Google "
 "Calendar, open Settings and copy the ID from the Calendar Address section "
 "into this field."
 msgstr ""
 
-#: google_drive/google_calendar.py:56
+#: google_drive/google_calendar.py:58
 #: google_drive/templates/html/google_calendar_edit.html:41
 msgid "Default View"
 msgstr ""
 
-#: google_drive/google_calendar.py:57
+#: google_drive/google_calendar.py:59
 #: google_drive/templates/html/google_calendar_edit.html:50
 msgid ""
 "The calendar view that students see by default. A student can change this "
 "view."
 msgstr ""
 
-#: google_drive/google_docs.py:61
+#: google_drive/google_calendar.py:62
+msgid "Week"
+msgstr ""
+
+#: google_drive/google_calendar.py:62
+msgid "Month"
+msgstr ""
+
+#: google_drive/google_calendar.py:62
+msgid "Agenda"
+msgstr ""
+
+#: google_drive/google_docs.py:59
+msgid "Google Document"
+msgstr ""
+
+#: google_drive/google_docs.py:62
 #: google_drive/templates/html/google_docs_edit.html:28
 msgid "Embed Code"
 msgstr ""
 
-#: google_drive/google_docs.py:63
+#: google_drive/google_docs.py:64
 #: google_drive/templates/html/google_docs_edit.html:31
 msgid ""
 "Google provides an embed code for Drive documents. In the Google Drive "
@@ -66,11 +86,11 @@ msgid ""
 "needed, click Publish, and copy the embed code into this field."
 msgstr ""
 
-#: google_drive/google_docs.py:71
+#: google_drive/google_docs.py:72
 msgid "Alternative Text"
 msgstr ""
 
-#: google_drive/google_docs.py:72
+#: google_drive/google_docs.py:73
 #: google_drive/templates/html/google_docs_edit.html:38
 msgid ""
 "Alternative text describes an image and appears if the image is unavailable."

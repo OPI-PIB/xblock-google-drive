@@ -12,7 +12,7 @@ from xblock.fields import Integer, Scope, String
 from xblock.fragment import Fragment
 from xblockutils.publish_event import PublishEventMixin
 from xblockutils.resources import ResourceLoader
-
+import copy
 LOG = logging.getLogger(__name__)
 RESOURCE_LOADER = ResourceLoader(__name__)
 
@@ -37,11 +37,13 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
     """
     XBlock providing a google calendar view for a specific calendar
     """
+
+
     display_name = String(
         display_name=_("Display Name"),
         help=_("This name appears in the horizontal navigation at the top of the page."),
         scope=Scope.settings,
-        default="Google Calendar"
+        default=_("Google Calendar")
     )
     calendar_id = String(
         display_name=_("Public Calendar ID"),
@@ -58,19 +60,21 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
         scope=Scope.settings,
         default=1
     )
-    views = [(0, 'Week'), (1, 'Month'), (2, 'Agenda')]
-
+    views = [[0, _('Week')], [1, _('Month')], [2, _('Agenda')]]
+    # viewsOrg = [[0, 'Week'], [1, 'Month'], [2, 'Agenda']]
+    org_views = copy.deepcopy(views)
+    skip_flag = False
     # Context argument is specified for xblocks, but we are not using herein
     def student_view(self, context):  # pylint: disable=unused-argument
         """
         Player view, displayed to the student
         """
+        self.init_emulation()
         fragment = Fragment()
-
         fragment.add_content(RESOURCE_LOADER.render_django_template(
             CALENDAR_TEMPLATE,
             context={
-                "mode": self.views[self.default_view][1],
+                "mode": self.org_views[self.default_view][1],
                 "src": self.calendar_id,
                 "title": self.display_name,
                 "language": utils.translation.get_language(),
@@ -89,14 +93,19 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
         """
         Editing view in Studio
         """
+
         fragment = Fragment()
         # Need to access protected members of fields to get their default value
         default_name = self.fields['display_name']._default  # pylint: disable=protected-access,unsubscriptable-object
-        fragment.add_content(RESOURCE_LOADER.render_template(CALENDAR_EDIT_TEMPLATE, {
-            'self': self,
-            'defaultName': default_name,
-            'defaultID': self.fields['calendar_id']._default  # pylint: disable=protected-access,unsubscriptable-object
-        }))
+        fragment.add_content(RESOURCE_LOADER.render_django_template(
+            CALENDAR_EDIT_TEMPLATE,
+            context={
+                'self': self,
+                'defaultName': default_name,
+                'defaultID': self.fields['calendar_id']._default  # pylint: disable=protected-access,unsubscriptable-object
+            },
+            i18n_service=self.runtime.service(self, "i18n"),
+        ))
         fragment.add_javascript(RESOURCE_LOADER.load_unicode('public/js/google_calendar_edit.js'))
         fragment.add_css(RESOURCE_LOADER.load_unicode('public/css/google_edit.css'))
 
@@ -133,3 +142,12 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
         A canned scenario for display in the workbench.
         """
         return [("Google Calendar scenario", "<vertical_demo><google-calendar/></vertical_demo>")]
+
+    def init_emulation(self):
+        if not self.skip_flag:
+            _ = self.runtime.service(self, "i18n").ugettext
+            for i, el in enumerate(self.views):
+                el[1] = _(el[1])
+            #     self.display_name = _(self.display_name)
+            self.fields['display_name']._default = _(self.fields['display_name']._default)
+            self.skip_flag = True
