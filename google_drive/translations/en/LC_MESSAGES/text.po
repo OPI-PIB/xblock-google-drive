@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-27 00:36+0100\n"
+"POT-Creation-Date: 2020-03-27 12:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,15 +57,15 @@ msgid ""
 "view."
 msgstr ""
 
-#: google_drive/google_calendar.py:62
+#: google_drive/google_calendar.py:63
 msgid "Week"
 msgstr ""
 
-#: google_drive/google_calendar.py:62
+#: google_drive/google_calendar.py:63
 msgid "Month"
 msgstr ""
 
-#: google_drive/google_calendar.py:62
+#: google_drive/google_calendar.py:63
 msgid "Agenda"
 msgstr ""
 
@@ -96,6 +96,10 @@ msgid ""
 "Alternative text describes an image and appears if the image is unavailable."
 msgstr ""
 
+#: google_drive/templates/add_buttons.html:5
+msgid "Add New Component"
+msgstr ""
+
 #: google_drive/templates/html/google_calendar_edit.html:9
 msgid "Invalid Google Calendar"
 msgstr ""
@@ -108,6 +112,7 @@ msgstr ""
 #: google_drive/templates/html/google_calendar_edit.html:21
 #: google_drive/templates/html/google_calendar_edit.html:32
 #: google_drive/templates/html/google_docs_edit.html:21
+#: google_drive/templates/studio_edit.html:92
 msgid "Clear Value"
 msgstr ""
 
@@ -115,20 +120,22 @@ msgstr ""
 msgid ""
 "Google provides an ID for publicly available calendars. In the Google "
 "Calendar, open Settings and copy the ID from the Calendar Address section "
-"into this field. You can "
+"into this field. You can learn more"
 msgstr ""
 
 #: google_drive/templates/html/google_calendar_edit.html:36
-msgid "learn more here"
+msgid " here"
 msgstr ""
 
 #: google_drive/templates/html/google_calendar_edit.html:60
 #: google_drive/templates/html/google_docs_edit.html:47
+#: google_drive/templates/studio_edit.html:106
 msgid "Save"
 msgstr ""
 
 #: google_drive/templates/html/google_calendar_edit.html:64
 #: google_drive/templates/html/google_docs_edit.html:51
+#: google_drive/templates/studio_edit.html:110
 msgid "Cancel"
 msgstr ""
 
@@ -138,4 +145,12 @@ msgstr ""
 
 #: google_drive/templates/html/google_docs_edit.html:35
 msgid "Alternative text"
+msgstr ""
+
+#: google_drive/templates/studio_edit.html:79
+msgid "None Available"
+msgstr ""
+
+#: google_drive/templates/studio_edit.html:91
+msgid "Clear"
 msgstr ""

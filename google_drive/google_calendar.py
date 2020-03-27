@@ -61,7 +61,7 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
         default=1
     )
     views = [[0, _('Week')], [1, _('Month')], [2, _('Agenda')]]
-    # viewsOrg = [[0, 'Week'], [1, 'Month'], [2, 'Agenda']]
+
     org_views = copy.deepcopy(views)
     skip_flag = False
     # Context argument is specified for xblocks, but we are not using herein
@@ -144,6 +144,9 @@ class GoogleCalendarBlock(XBlock, PublishEventMixin):
         return [("Google Calendar scenario", "<vertical_demo><google-calendar/></vertical_demo>")]
 
     def init_emulation(self):
+        """
+        Emulation of init function, for translation purpose.
+        """
         if not self.skip_flag:
             _ = self.runtime.service(self, "i18n").ugettext
             for i, el in enumerate(self.views):

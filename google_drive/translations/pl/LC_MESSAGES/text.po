@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-26 23:57+0100\n"
+"POT-Creation-Date: 2020-03-27 12:41+0100\n"
 "PO-Revision-Date: 2020-03-26 10:41+0000\n"
 "Last-Translator: krystianlygas <krystian.lygas@gmail.com>, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/navoica/teams/104253/pl/)\n"
@@ -114,6 +114,10 @@ msgstr ""
 "Tekst alternatywny opisuje obraz i pojawia się wtedy, gdy obraz jest "
 "niedostępny."
 
+#: google_drive/templates/add_buttons.html:5
+msgid "Add New Component"
+msgstr "Dodaj nowy komponent"
+
 #: google_drive/templates/html/google_calendar_edit.html:9
 msgid "Invalid Google Calendar"
 msgstr "Nieprawidłowy Kalendarz Google"
@@ -126,6 +130,7 @@ msgstr "Popraw zaznaczone pola. "
 #: google_drive/templates/html/google_calendar_edit.html:21
 #: google_drive/templates/html/google_calendar_edit.html:32
 #: google_drive/templates/html/google_docs_edit.html:21
+#: google_drive/templates/studio_edit.html:92
 msgid "Clear Value"
 msgstr "Wyczyść zawartość"
 
@@ -133,23 +138,26 @@ msgstr "Wyczyść zawartość"
 msgid ""
 "Google provides an ID for publicly available calendars. In the Google "
 "Calendar, open Settings and copy the ID from the Calendar Address section "
-"into this field. You can "
+"into this field. You can learn more"
 msgstr ""
 "Google udostępnia kod do umieszczania publicznych kalendarzy. W Kalendarzu "
 "Google należy otworzyć \"Ustawienia\", a następnie \"Integrowanie "
-"kalendarza\" i skopiować kod iframe do powyższego pola. Możesz"
+"kalendarza\" i skopiować kod iframe do powyższego pola. Możesz dowiedzieć "
+"się więcej"
 
 #: google_drive/templates/html/google_calendar_edit.html:36
-msgid "learn more here"
-msgstr "dowiedzieć się więcej tutaj."
+msgid " here"
+msgstr " tutaj"
 
 #: google_drive/templates/html/google_calendar_edit.html:60
 #: google_drive/templates/html/google_docs_edit.html:47
+#: google_drive/templates/studio_edit.html:106
 msgid "Save"
 msgstr "Zapisz"
 
 #: google_drive/templates/html/google_calendar_edit.html:64
 #: google_drive/templates/html/google_docs_edit.html:51
+#: google_drive/templates/studio_edit.html:110
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -160,3 +168,11 @@ msgstr "Niepoprawidłowy Dokument Google"
 #: google_drive/templates/html/google_docs_edit.html:35
 msgid "Alternative text"
 msgstr "Tekst alternatywny"
+
+#: google_drive/templates/studio_edit.html:79
+msgid "None Available"
+msgstr "Niedostępne"
+
+#: google_drive/templates/studio_edit.html:91
+msgid "Clear"
+msgstr "Wyczyść zawartość"

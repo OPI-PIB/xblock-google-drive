@@ -178,6 +178,9 @@ class GoogleDocumentBlock(XBlock, PublishEventMixin, StudioEditableXBlockMixin):
         return [("Google Docs scenario", "<vertical_demo><google-document/></vertical_demo>")]
 
     def init_emulation(self):
+        """
+        Emulation of init function, for translation purpose.
+        """
         if not self.skip_flag:
             _ = self.runtime.service(self, "i18n").ugettext
             self.fields['display_name']._default = _(self.fields['display_name']._default)
